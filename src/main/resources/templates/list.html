@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Item List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+<nav>
+    <a th:href="@{/Users}">Home</a>
+    <a th:href="@{/Users/add}">Add User</a>
+    <a th:href="@{/Items/add}">Add item</a>
+    <a th:href="@{/BorrowRequests/add}">Add Borrow Request</a>
+    <a th:href="@{/LendRequests/add}">Add Lend Request</a>
+    
+</nav>
+<div class="container">
+    <h2>Items</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>State</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="Item : ${Items}">
+                <td th:text="${Item.itemname}"></td>
+                <td th:text="${Item.description}"></td>
+                <td th:text="${Item.category}"></td>
+                <td th:text="${Item.state}"></td>
+                <td th:text="${Item.value}"></td>
+                <td>
+                    <a th:href="@{/Items/{id}(id=${Item.id})}">View</a>
+                    <a th:href="@{/Items/{id}/edit(id=$(Item.id})}">Edit</a>
+                    <a th:href="@{/Items/{id}/delete(id=${Item.id})}">Delete</a>
+					
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

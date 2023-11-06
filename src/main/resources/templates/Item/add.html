@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<nav>
+    <a th:href="@{/Items}">Home</a>
+    <a th:href="@{/Items/add}">Add Item</a>
+</nav>
+	<form th:action="@{/Items/add}" th:object="${Item}" method="post">
+    itemname: <input type="text" th:field="*{itemname}"/><br/>
+    description: <input type="text" th:field="*{description}"/><br/>
+    category: <input type="text" th:field="*{category}"/><br/>
+     state: <input type="text" th:field="*{state}"/><br/>
+    value: <input type="text" th:field="*{value}"/><br/>
+    <input type="submit" value="Submit"/>
+</form>
+
+</body>
+</html>

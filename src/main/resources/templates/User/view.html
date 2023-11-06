@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User View</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+<nav>
+    <a th:href="@{/Users}">Home</a>
+    <a th:href="@{/Users/add}">Add Book</a>
+</nav>
+<div class="container">
+    <h2>User Details</h2>
+    <p><strong>Username:</strong> <span th:text="${User.username}"></span></p>
+    <p><strong>Password:</strong> <span th:text="${User.password}"></span></p>
+    <p><strong>Fullname:</strong> <span th:text="${User.fullname}"></span></p>
+    <!-- Add more details or links if needed -->
+</div>
+
+</body>
+</html>

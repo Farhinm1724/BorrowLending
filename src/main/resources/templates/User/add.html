@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<nav>
+    <a th:href="@{/Users}">Home</a>
+    <a th:href="@{/Users/add}">Add User</a>
+   
+</nav>
+	<form th:action="@{/Users/add}" th:object="${User}" method="post">
+    username: <input type="text" th:field="*{username}"/><br/>
+    password: <input type="text" th:field="*{password}"/><br/>
+    fullName: <input type="text" th:field="*{fullName}"/><br/>
+    <input type="submit" value="Submit"/>
+</form>
+
+</body>
+</html>
